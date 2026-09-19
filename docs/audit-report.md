@@ -26,6 +26,7 @@ National Portal of India — india.gov.in
    - Priority: Medium
 
 ## Manual Testing
+
 Keyboard-only navigation should be performed separately because automated Lighthouse testing cannot cover all accessibility issues.
 
 ## Recommended Remediation
@@ -33,3 +34,20 @@ Keyboard-only navigation should be performed separately because automated Lighth
 - Improve color contrast to meet accessibility requirements.
 - Correct list markup and semantic HTML structure.
 - Perform a manual keyboard navigation review.
+  
+## Additional Architecture / Performance Findings
+
+4. **Slow Largest Contentful Paint (LCP)**
+   - Mobile LCP: 4.5 seconds.
+   - Desktop LCP: 3.3 seconds.
+   - This can delay the loading of the main visible content.
+   - Priority: Medium
+
+5. **High Total Blocking Time (TBT)**
+   - Desktop TBT: 270 ms.
+   - This indicates that browser main-thread work can delay responsiveness.
+   - Priority: Medium
+
+## Accessibility Testing Limitation
+
+A true keyboard-only navigation pass was not completed because the audit was performed on a mobile device without a physical keyboard. This should be completed separately before final accessibility sign-off.
